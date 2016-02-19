@@ -1,0 +1,4 @@
+SECRET_KEY_BASE: 'your_secret_key_base'
+
+# These configuration will override all above
+<%= IO.read('config/application.local.yml') if File.exists?('config/application.local.yml') %>
