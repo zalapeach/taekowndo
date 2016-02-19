@@ -1,0 +1,8 @@
+development:
+  DEVELOPMENT_SECRET_KEY_BASE: 'your_development_secret_key_base'
+
+test:
+  TEST_SECRET_KEY_BASE: 'your_test_secret_key_base'
+
+# This file will override above configurations
+<%= IO.read('config/application.local.yml') if File.exists?('config/application.local.yml') %>

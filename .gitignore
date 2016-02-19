@@ -1,0 +1,6 @@
+log/*
+tmp/*
+
+# Ignore application configuration
+/config/application.local.yml
+/config/database.local.yml
