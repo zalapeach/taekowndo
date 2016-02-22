@@ -5,8 +5,13 @@ rvm:
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
-  - "psql -c 'create database taekowndo;' -U postgres"
+  - "psql -c 'create database taekowndo_test;' -U postgres"
   - "RAILS_ENV=test bundle exec rake db:migrate"
 
 script:
-  - "RAILS_ENV=test bundle exec rake"
+  - "RAILS_ENV=test bundle exec rspec"
+
+deploy:
+  provider: heroku
+  api_key: 9e6be7fb-b4ff-4797-92d4-3e1a30170976
+  app: ammdk

@@ -3,8 +3,6 @@ defaults: &defaults
   pool: 5
   timeout: 5000
   host: localhost
-  username: 'your_username'
-  password: 'your_password'
 
 development:
   database: taekowndo_development
