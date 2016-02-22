@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def create
-    binding.pry
     user = User.omniauth_auth(env['omniauth.auth'])
     if user.nil?
       redirect_to root_path

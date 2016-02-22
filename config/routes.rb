@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :sessions, only: [:create, :destroy]
+
+  namespace :admin do
+    root 'home#index'
+  end
 end
