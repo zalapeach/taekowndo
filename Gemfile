@@ -15,4 +15,12 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'nyan-cat-formatter'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'ffaker'
 end
