@@ -1,0 +1,20 @@
+= form_for [:admin, @student] do |form|
+  %p
+    = form.label :danbom
+    = form.text_field :danbom
+  %p
+    = form.label :name, 'Nombre completo'
+    = form.text_field :name
+  %p
+    = form.label :age, 'Edad'
+    = form.number_field :age
+  %p
+    = form.label :dojang, 'Dojang (Escuela)'
+    = form.text_field :dojang
+  %p
+    = form.label :teacher, 'Profesor'
+    = form.text_field :teacher
+  %p
+    = form.label :exam_age, 'Año de examen'
+    = form.number_field :exam_age
+  %p= form.submit 'Guardar registro'

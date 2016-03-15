@@ -1,0 +1,28 @@
+%p holi
+- if @students
+  %table
+    %thead
+      %tr
+        %th Danbom
+        %th Nombre completo
+        %th Edad
+        %th Estado
+        %th Dojang
+        %th Maestro
+        %th Año de examen
+        %th Opciones
+    %tbody
+      - @students.each do |student|
+        %tr
+          %td= student.danbom
+          %td= student.name
+          %td= student.age
+          %td= student.state
+          %td= student.dojang
+          %td= student.teacher
+          %td= student.exam_age
+          %td
+            = link_to 'Editar', edit_admin_student_path(student)
+            = link_to 'Eliminar', admin_student_path(student), method: :delete,
+              data: { confirm: '¿Estas seguro?' }
+%p= link_to 'Agregar nuevo estudiate', new_admin_student_path
