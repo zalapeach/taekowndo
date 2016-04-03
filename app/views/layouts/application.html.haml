@@ -6,12 +6,21 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    .site-wrapper
-      .site-wrapper-inner
-        .cover-container
-          .masthead.clearfix
-            .inner
-              %h3.masthead-brand AMMDK
-          .inner.cover
-            %h1.inner-title Bienvenido
-            = yield
+    .container
+      %nav.navbar.navbar-default.navbar-fixed-top
+        .container
+          - if session['user_id']
+            .navbar-header
+              = link_to 'Admin', admin_root_path, class: 'navbar-brand'
+            .collapse.navbar-collapse
+              %ul.nav.navbar-nav
+                %li= link_to 'Estudiantes', admin_students_path
+                %li= link_to 'Rangos', '#'
+                %li= link_to 'Salir', logout_path
+          - else
+            .navbar-header
+              = link_to 'AMMDK', root_path, class: 'navbar-brand'
+    .container.container-all-pages
+      .row
+        .col-md-12
+          = yield
