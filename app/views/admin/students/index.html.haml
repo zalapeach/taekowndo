@@ -1,6 +1,13 @@
-%p holi
-- if @students
-  %table
+%h1 Estudiantes
+- if @students.empty?
+  %p
+    Aun no hay estudiantes, puedes agregar presionando
+    = link_to 'aqui', new_admin_student_path
+-else
+  %p
+    Para agregar estudiantes, siga este
+    = link_to 'link', new_admin_student_path
+  %table.table.table-striped
     %thead
       %tr
         %th Danbom
@@ -22,7 +29,11 @@
           %td= student.teacher
           %td= student.exam_age
           %td
-            = link_to 'Editar', edit_admin_student_path(student)
-            = link_to 'Eliminar', admin_student_path(student), method: :delete,
-              data: { confirm: '¿Estas seguro?' }
-%p= link_to 'Agregar nuevo estudiate', new_admin_student_path
+            = link_to 'Editar', edit_admin_student_path(student),
+              class: 'btn btn-warning'
+            = link_to 'Borrar', admin_student_path(student),
+              method: :delete, data: { confirm: '¿Desea continuar?' },
+              class: 'btn btn-danger'
+  %p
+    Para agregar estudiantes, siga este
+    = link_to 'link', new_admin_student_path

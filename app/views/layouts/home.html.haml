@@ -6,4 +6,17 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      %nav.navbar.navbar-default.navbar-fixed-top
+        .container
+          .navbar-header
+            = link_to 'Admin', admin_root_path, class: 'navbar-brand'
+          .collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li= link_to 'Estudiantes', admin_students_path
+              %li= link_to 'Rangos', '#'
+              %li= link_to 'Salir', logout_path
+    .container.container-all-pages
+      .row
+        .col-md-12
+          = yield
