@@ -20,5 +20,13 @@
     = form.label :exam_age, 'Año de examen'
     = form.number_field :exam_age, class: 'form-control',
       placeholder: 'Introduce el año de examen', min: '1900', max: '2100'
+  .form-group
+    = form.label :state_id, 'Estado'
+    = form.collection_select :state_id, @states, :id, :name,
+      { include_blank: 'Seleccione su estado' }, { class: 'form-control' }
+  .form-group
+    = form.label :grade_id, 'Grado'
+    = form.collection_select :grade_id, @grades, :id, :name,
+      { include_blank: 'Seleccione su grado' }, { class: 'form-control' }
   = form.submit 'Guardar registro', class: 'btn btn-success'
   = link_to 'Regresar', admin_students_path, class: 'btn btn-primary'

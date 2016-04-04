@@ -1,0 +1,9 @@
+%h1 Grados
+%table.table.table-striped
+  %thead
+    %tr
+      %th Grado
+  %tbody
+    - @grades.each do |grade|
+      %tr
+        %td= grade.name

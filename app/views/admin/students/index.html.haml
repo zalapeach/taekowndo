@@ -14,6 +14,7 @@
         %th Nombre completo
         %th Edad
         %th Estado
+        %th Grado
         %th Dojang
         %th Maestro
         %th Año de examen
@@ -24,7 +25,8 @@
           %td= student.danbom
           %td= student.name
           %td= student.age
-          %td= student.state
+          %td= student.state.name unless student.state.nil?
+          %td= student.grade.name unless student.grade.nil?
           %td= student.dojang
           %td= student.teacher
           %td= student.exam_age

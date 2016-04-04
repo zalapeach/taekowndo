@@ -15,7 +15,8 @@
             .collapse.navbar-collapse
               %ul.nav.navbar-nav
                 %li= link_to 'Estudiantes', admin_students_path
-                %li= link_to 'Rangos', '#'
+                %li= link_to 'Rangos', admin_grades_path
+                %li= link_to 'Estados', admin_states_path
                 %li= link_to 'Salir', logout_path
           - else
             .navbar-header
