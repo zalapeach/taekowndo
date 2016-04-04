@@ -5,6 +5,8 @@ class Admin::StudentsController < Admin::BaseController
 
   def new
     @student = Student.new
+    @states = State.all
+    @grades = Grade.all
   end
 
   def create
@@ -18,6 +20,8 @@ class Admin::StudentsController < Admin::BaseController
 
   def edit
     @student = Student.find(params[:id])
+    @states = State.all
+    @grades = Grade.all
   end
 
   def update
@@ -42,7 +46,8 @@ class Admin::StudentsController < Admin::BaseController
       :danbom,
       :name,
       :age,
-      :state,
+      :state_id,
+      :grade_id,
       :dojang,
       :teacher,
       :exam_age
