@@ -1,0 +1,11 @@
+%h1 Agregar nuevo administrador
+= form_for [:admin, @user] do |form|
+  .form-group
+    = form.label :email
+    = form.text_field :email, class: 'form-control',
+      placeholder: 'Correo electronico de gmail'
+  %p
+    Solo podran acceder los administradores que possean un correo electronico
+    de gmail y cuyos correos esten registrados en el sistema
+  = form.submit 'Guardar correo', class: 'btn btn-success'
+  = link_to 'Regresar', admin_users_path, class: 'btn btn-primary'

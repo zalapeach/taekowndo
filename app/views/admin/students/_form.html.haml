@@ -1,20 +1,32 @@
 = form_for [:admin, @student] do |form|
-  %p
+  .form-group
     = form.label :danbom
-    = form.text_field :danbom
-  %p
+    = form.text_field :danbom, class: 'form-control', placeholder: 'Danbom'
+  .form-group
     = form.label :name, 'Nombre completo'
-    = form.text_field :name
-  %p
+    = form.text_field :name, class: 'form-control',
+      placeholder: 'Nombre completo'
+  .form-group
     = form.label :age, 'Edad'
-    = form.number_field :age
-  %p
+    = form.number_field :age, class: 'form-control', min: '0', max: '99',
+      placeholder: 'Introduce tu edad...'
+  .form-group
     = form.label :dojang, 'Dojang (Escuela)'
-    = form.text_field :dojang
-  %p
+    = form.text_field :dojang, class: 'form-control', placeholder: 'Escuela'
+  .form-group
     = form.label :teacher, 'Profesor'
-    = form.text_field :teacher
-  %p
+    = form.text_field :teacher, class: 'form-control', placeholder: 'Profesor'
+  .form-group
     = form.label :exam_age, 'Año de examen'
-    = form.number_field :exam_age
-  %p= form.submit 'Guardar registro'
+    = form.number_field :exam_age, class: 'form-control',
+      placeholder: 'Introduce el año de examen', min: '1900', max: '2100'
+  .form-group
+    = form.label :state_id, 'Estado'
+    = form.collection_select :state_id, @states, :id, :name,
+      { include_blank: 'Seleccione su estado' }, { class: 'form-control' }
+  .form-group
+    = form.label :grade_id, 'Grado'
+    = form.collection_select :grade_id, @grades, :id, :name,
+      { include_blank: 'Seleccione su grado' }, { class: 'form-control' }
+  = form.submit 'Guardar registro', class: 'btn btn-success'
+  = link_to 'Regresar', admin_students_path, class: 'btn btn-primary'

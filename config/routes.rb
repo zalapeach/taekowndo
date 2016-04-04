@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'home#index'
-    resources :students
+    resources :students, except: :show
+    resources :grades, only: :index
+    resources :states, only: :index
+    resources :users, except: [:show, :update, :edit]
   end
 end

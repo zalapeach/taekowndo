@@ -4,7 +4,6 @@ class CreateStudents < ActiveRecord::Migration
       t.string :danbom
       t.string :name
       t.integer :age
-      t.string :state
       t.string :dojang
       t.string :teacher
       t.string :exam_age
