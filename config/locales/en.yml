@@ -1,0 +1,6 @@
+en:
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      taken: ya ha sido tomado
+      blank: no puede estar en blanco

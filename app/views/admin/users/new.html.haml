@@ -1,4 +1,10 @@
 %h1 Agregar nuevo administrador
+- if @user.errors.any?
+  .col-md-12.bg-danger
+    %h3 Hay errores en este formulario
+    %ul
+      - @user.errors.full_messages.each do |msg|
+        %li= msg
 = form_for [:admin, @user] do |form|
   .form-group
     = form.label :email
