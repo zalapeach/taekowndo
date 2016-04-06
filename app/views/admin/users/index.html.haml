@@ -1,7 +1,6 @@
 %h1 Administradores
 %p
-  Para agregar administradores, siga este
-  = link_to 'link', new_admin_user_path
+  = link_to 'Agregar Admin', new_admin_user_path, class: 'btn btn-success'
 %table.table.table-striped
   %thead
     %tr
@@ -15,5 +14,4 @@
           = link_to 'Eliminar', admin_user_path(user), method: :delete,
             data: { confirm: '¿Desea continuar?' }, class: 'btn btn-danger'
 %p
-  Para agregar administradores, siga este
-  = link_to 'link', new_admin_user_path
+  = link_to 'Agregar Admin', new_admin_user_path, class: 'btn btn-success'
