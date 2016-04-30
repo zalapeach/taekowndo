@@ -14,7 +14,7 @@ class Admin::StudentsController < Admin::BaseController
        WHEN grades.name = '7mo Dan' THEN 10
        WHEN grades.name = '8vo Dan' THEN 11
        WHEN grades.name = '9no Dan' THEN 12
-       END")
+       END").page(params[:page]).per(20)
   end
 
   def new
