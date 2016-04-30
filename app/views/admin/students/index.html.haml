@@ -35,3 +35,4 @@
               data: { confirm: '¿Desea continuar?' }, class: 'btn btn-danger'
   %p
     = link_to 'Crear estudiantes', new_admin_student_path, class: 'btn btn-success'
+  %p= paginate @students

@@ -14,13 +14,11 @@ class Admin::StudentsController < Admin::BaseController
        WHEN grades.name = '7mo Dan' THEN 10
        WHEN grades.name = '8vo Dan' THEN 11
        WHEN grades.name = '9no Dan' THEN 12
-       END")
+       END").page(params[:page]).per(20)
   end
 
   def new
     @student = Student.new
-    @states = State.all
-    @grades = Grade.all
   end
 
   def create
@@ -29,13 +27,13 @@ class Admin::StudentsController < Admin::BaseController
       redirect_to admin_students_path
     else
       render :new
+      @states = State.all
+      @grades = Grade.all
     end
   end
 
   def edit
     @student = Student.find(params[:id])
-    @states = State.all
-    @grades = Grade.all
   end
 
   def update
