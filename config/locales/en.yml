@@ -1,9 +1,18 @@
 en:
+  activerecord:
+    attributes:
+      student:
+        danbom: Danbom
+        name: Nombre
+        age: Edad
+        dojang: Dojang (Escuela)
+        teacher: Maestro
+        exam_age: Año de exámen
   errors:
-    format: "%{attribute} %{message}"
+    format: "El campo %{attribute} %{message}"
     messages:
       taken: ya ha sido tomado
       blank: no puede estar en blanco
-      less_than: "debe ser menor que %{count}"
-      greater_than: "debe ser mayor que %{count}"
+      less_than: "debe ser menor a %{count}"
+      greater_than: "debe ser mayor a %{count}"
       not_a_number: no es un número
