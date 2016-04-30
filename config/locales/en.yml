@@ -4,3 +4,6 @@ en:
     messages:
       taken: ya ha sido tomado
       blank: no puede estar en blanco
+      less_than: "debe ser menor que %{count}"
+      greater_than: "debe ser mayor que %{count}"
+      not_a_number: no es un número

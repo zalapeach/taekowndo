@@ -1,3 +1,9 @@
+- if @student.errors.any?
+  .col-md-12.bg-danger
+    %h3 Hay errores en este formulario
+    %ul
+      - @student.errors.full_messages.each do |msg|
+        %li= msg
 = form_for [:admin, @student] do |form|
   .form-group
     = form.label :danbom
@@ -22,11 +28,11 @@
       placeholder: 'Introduce el año de examen', min: '1900', max: '2100'
   .form-group
     = form.label :state_id, 'Estado'
-    = form.collection_select :state_id, @states, :id, :name,
+    = form.collection_select :state_id, State.all, :id, :name,
       { include_blank: 'Seleccione su estado' }, { class: 'form-control' }
   .form-group
     = form.label :grade_id, 'Grado'
-    = form.collection_select :grade_id, @grades, :id, :name,
+    = form.collection_select :grade_id, State.all, :id, :name,
       { include_blank: 'Seleccione su grado' }, { class: 'form-control' }
   = form.submit 'Guardar registro', class: 'btn btn-success'
   = link_to 'Regresar', admin_students_path, class: 'btn btn-primary'
