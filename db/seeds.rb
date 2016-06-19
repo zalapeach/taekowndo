@@ -1,3 +1,4 @@
+Student.destroy_all
 Grade.destroy_all
 State.destroy_all
 Country.destroy_all
@@ -24,4 +25,11 @@ end
   'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz', 'Yucatán', 'Zacatecas'
 ].each do |state|
   State.create!(name: state, country: Country.first)
+end
+
+100.times do |i|
+  Student.create!(
+    danbom: i, name: "Estudiante No. #{ i }", age: 25,
+    dojang: 'Adolfo Lopez Mateos', teacher: 'Maestro Sensei Rommel',
+    exam_age: '1991', state: State.all.sample, grade: Grade.all.sample)
 end
