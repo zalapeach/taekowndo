@@ -29,6 +29,8 @@
           %td= student.teacher
           %td= student.exam_age
           %td
+            = link_to 'Ver', admin_student_path(student),
+              class: 'btn btn-success'
             = link_to 'Editar', edit_admin_student_path(student),
               class: 'btn btn-warning'
             = link_to 'Borrar', admin_student_path(student), method: :delete,
