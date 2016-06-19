@@ -1,3 +1,4 @@
+Student.destroy_all
 Grade.destroy_all
 State.destroy_all
 Country.destroy_all
@@ -8,7 +9,9 @@ User.create!(email: 'zalapeach@gmail.com')
 
 [
   '1er Dan', '2do Dan', '3er Dan', '4to Dan', '5to Dan', '6to Dan', '7mo Dan',
-  '8vo Dan', '9no Dan', '1er Poom', '2do Poom', '3er Poom'
+  '8vo Dan', '9no Dan', '1er Poom', '2do Poom', '3er Poom', '10mo Kup',
+  '9no Kup', '8vo Kup', '7mo Kup', '6to Kup', '5to Kup', '4to Kup', '3er Kup',
+  '2do Kup', '1er Kup'
 ].each do |grade|
   Grade.create!(name: grade)
 end
@@ -22,4 +25,11 @@ end
   'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz', 'Yucatán', 'Zacatecas'
 ].each do |state|
   State.create!(name: state, country: Country.first)
+end
+
+100.times do |i|
+  Student.create!(
+    danbom: i, name: "Estudiante No. #{ i }", age: 25,
+    dojang: 'Adolfo Lopez Mateos', teacher: 'Maestro Sensei Rommel',
+    exam_age: '1991', state: State.all.sample, grade: Grade.all.sample)
 end
