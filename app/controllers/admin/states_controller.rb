@@ -1,5 +1,5 @@
 class Admin::StatesController < Admin::BaseController
   def index
-    @states = State.all
+    @states = State.order(name: :asc)
   end
 end
