@@ -11,8 +11,9 @@ class Student < ActiveRecord::Base
   validates :exam_age, presence: true, numericality:
     { only_integer: true, greater_than: 1900, less_than: 2100 }
 
+  scope :unions, -> { joins(:grade, :state) }
   scope :sorted, -> do
-    joins(:grade).order(
+    joins(:grade, :state).order(
       "CASE
        WHEN grades.name = '10mo Kup' THEN 1
        WHEN grades.name = '9no Kup' THEN 2
