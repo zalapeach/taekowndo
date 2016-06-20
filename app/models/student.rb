@@ -12,8 +12,17 @@ class Student < ActiveRecord::Base
     { only_integer: true, greater_than: 1900, less_than: 2100 }
 
   scope :unions, -> { joins(:grade, :state) }
+  scope :conditions, -> (parameter) do
+    where(
+      'students.name ILIKE ? or grades.name ILIKE ? or states.name ILIKE ? or
+       students.dojang ILIKE ? or students.teacher ILIKE ? or
+       students.exam_age ILIKE ?',
+      "%#{ parameter }%", "%#{ parameter }%",
+      "%#{ parameter }%", "%#{ parameter }%",
+      "%#{ parameter }%", "%#{ parameter }%")
+  end
   scope :sorted, -> do
-    joins(:grade, :state).order(
+    order(
       "CASE
        WHEN grades.name = '10mo Kup' THEN 1
        WHEN grades.name = '9no Kup' THEN 2
