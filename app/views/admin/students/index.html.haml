@@ -2,10 +2,7 @@
 - if current_page?(controller: 'admin/students')
   %p= link_to 'Crear estudiantes', new_admin_student_path,
     class: 'btn btn-success'
-= form_tag(admin_students_path, method: :get) do
-  = label_tag :search, 'Buscar'
-  = text_field_tag :search, params[:search]
-  = button_tag 'Buscar', name: nil
+= render partial: 'admin/students/search'
 %table.table.table-striped
   %thead
     %tr
