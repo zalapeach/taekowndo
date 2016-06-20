@@ -32,7 +32,7 @@
       { include_blank: 'Seleccione su estado' }, { class: 'form-control' }
   .form-group
     = form.label :grade_id, 'Grado'
-    = form.collection_select :grade_id, State.all, :id, :name,
+    = form.collection_select :grade_id, Grade.all, :id, :name,
       { include_blank: 'Seleccione su grado' }, { class: 'form-control' }
   = form.submit 'Guardar registro', class: 'btn btn-success'
   = link_to 'Regresar', admin_students_path, class: 'btn btn-primary'

@@ -1,0 +1,6 @@
+= form_tag(current_path, method: :get, class: 'form-inline') do
+  .form-group
+    = label_tag :search, 'Buscar'
+    = text_field_tag :search, params[:search], class: 'form-control',
+      placeholder: 'Buscar...'
+  = button_tag 'Buscar', name: nil, class: 'btn btn-default'

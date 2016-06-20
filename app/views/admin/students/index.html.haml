@@ -2,6 +2,7 @@
 - if current_page?(controller: 'admin/students')
   %p= link_to 'Crear estudiantes', new_admin_student_path,
     class: 'btn btn-success'
+= render partial: 'admin/students/search'
 %table.table.table-striped
   %thead
     %tr
